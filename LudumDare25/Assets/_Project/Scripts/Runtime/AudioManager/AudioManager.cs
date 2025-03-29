@@ -4,12 +4,19 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace _Project.Scripts.Runtime
+namespace _Project.Scripts.Runtime.AudioManager
 {
     public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         public Sound[] sounds;
         public AudioMixerGroup defaultAudioMixerGroup;
+
+        public bool enableBeatEvents = true;
+
+        [ShowIf("enableBeatEvents")]
+        public BeatSettings beatSettings;
+
+        private AudioSource _beatSource;
 
         public override void Awake()
         {
@@ -31,6 +38,31 @@ namespace _Project.Scripts.Runtime
                 s.source.playOnAwake = s.playOnAwake;
 
                 if (s.playOnAwake) s.source.Play();
+            }
+        }
+
+        private void OnEnable()
+        {
+            //get the audiosource for the event beats if its enabled
+            if (enableBeatEvents)
+            {
+                Sound s = Array.Find(sounds, sound => sound.name == beatSettings.soundName);
+
+                _beatSource = s.source;
+            }
+        }
+
+        private void Update()
+        {
+            if (enableBeatEvents && _beatSource.isPlaying)
+            {
+                foreach (var interval in beatSettings.intervals)
+                {
+                    float sampledTime = (_beatSource.timeSamples /
+                                         (_beatSource.clip.frequency *
+                                          interval.GetIntervalLength(beatSettings.bpmOfSound)));
+                    interval.CheckForNewInterval(sampledTime);
+                }
             }
         }
 

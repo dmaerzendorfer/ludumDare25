@@ -1,3 +1,5 @@
+using System;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +26,10 @@ public class PixelatedCamera : MonoBehaviour
     [Header("Screen scaling settings")]
     public PixelScreenMode mode;
 
+    [OnValueChanged("Init")]
     public ScreenSize targetScreenSize = new ScreenSize { width = 256, height = 144 };
+
+    [OnValueChanged("Init")]
     public uint screenScaleFactor = 1;
 
     [Header("Display")]

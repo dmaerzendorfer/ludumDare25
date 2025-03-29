@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace _Project.Scripts.Runtime
+namespace _Project.Scripts.Runtime.AudioManager
 {
     [Serializable]
     public class Sound

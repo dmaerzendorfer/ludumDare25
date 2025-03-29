@@ -54,4 +54,40 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: TransitionOut
+    clip: {fileID: 8300000, guid: fda515c9377c17d438cc758befbf0b28, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: TransitionIn
+    clip: {fileID: 8300000, guid: 97d345106bfcfc34a84eda94f75be415, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 93c4c869ea472c447bebb040adf8ae4d, type: 3}
+    audioMixerGroup: {fileID: 1478221509044485727, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 1
+    playOnAwake: 1
+    source: {fileID: 0}
   defaultAudioMixerGroup: {fileID: 24300002, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+  enableBeatEvents: 1
+  beatSettings:
+    bpmOfSound: 126
+    soundName: MenuMusic
+    intervals:
+    - steps: 1
+      trigger:
+        m_PersistentCalls:
+          m_Calls: []

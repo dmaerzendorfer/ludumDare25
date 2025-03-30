@@ -64,31 +64,32 @@ namespace _Project.Scripts.Runtime
             StartCoroutine(DoTransition(sceneId, onCompleteCallback));
         }
 
-        [Button("Test to reload current scene")]
-        public void TestSceneChange()
+        [Button("Load next scene")]
+        public void ChangeToNextScene()
         {
-            ChangeToScene(SceneManager.GetActiveScene().buildIndex);
+            ChangeToScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
         }
 
         private IEnumerator DoTransition(int sceneId, Action onCompleteCallback)
         {
             IsTransitioning = true;
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneId);
             //do the animation stuff
             _audioManager.PlaySound("TransitionOut");
-            yield return Tween.Custom(this, paniniTweenSettings.WithDirection(true, false),
-                    (target, val) => { target._paniniProjection.distance.value = val; })
-                .Group(
-                    Tween.Custom(this, colorAdjustmentsTweenSettings.WithDirection(true, false),
-                        (target, val) => { target._colorAdjustments.colorFilter.value = val; }))
-                .Group(
-                    Tween.Custom(this, lensDistortIntensityTweenSettings.WithDirection(true, false),
-                        (target, val) => { target._lensDistortion.intensity.value = val; }))
-                .Group(
-                    Tween.Custom(this, lensDistortCenterOutTweenSettings.WithDirection(true, false),
-                        (target, val) => { target._lensDistortion.center.value = val; }))
-                .ToYieldInstruction();
+            Sequence s =
+                Tween.Custom(this, paniniTweenSettings.WithDirection(true, false),
+                        (target, val) => { target._paniniProjection.distance.value = val; })
+                    .Group(
+                        Tween.Custom(this, colorAdjustmentsTweenSettings.WithDirection(true, false),
+                            (target, val) => { target._colorAdjustments.colorFilter.value = val; }))
+                    .Group(
+                        Tween.Custom(this, lensDistortIntensityTweenSettings.WithDirection(true, false),
+                            (target, val) => { target._lensDistortion.intensity.value = val; }))
+                    .Group(
+                        Tween.Custom(this, lensDistortCenterOutTweenSettings.WithDirection(true, false),
+                            (target, val) => { target._lensDistortion.center.value = val; }));
+            yield return s.ToYieldInstruction();
 
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneId);
             // Wait until the asynchronous scene fully loads
             while (!asyncLoad.isDone)
             {

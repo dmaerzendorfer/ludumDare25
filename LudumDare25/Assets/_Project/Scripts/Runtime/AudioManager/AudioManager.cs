@@ -1,6 +1,7 @@
 ﻿using System;
 using _Project.Scripts.Runtime.Utility;
 using NaughtyAttributes;
+using PrimeTween;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -8,9 +9,10 @@ namespace _Project.Scripts.Runtime.AudioManager
 {
     public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
+        public AudioMixer mixer;
         public Sound[] sounds;
         public AudioMixerGroup defaultAudioMixerGroup;
-
+        public Ease defaultFadeEase = Ease.Linear;
         public bool enableBeatEvents = true;
 
         [ShowIf("enableBeatEvents")]
@@ -27,7 +29,7 @@ namespace _Project.Scripts.Runtime.AudioManager
             foreach (var s in sounds)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
-                var audioMixerGroup = s.source.outputAudioMixerGroup ?? defaultAudioMixerGroup;
+                var audioMixerGroup = s.audioMixerGroup ?? defaultAudioMixerGroup;
                 s.source.outputAudioMixerGroup = audioMixerGroup;
                 s.source.clip = s.clip;
                 s.source.volume = s.volume;
@@ -66,7 +68,7 @@ namespace _Project.Scripts.Runtime.AudioManager
             }
         }
 
-        public void PlaySound(string name)
+        public void PlaySound(string name, float fadeDuration = 0f)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s == null)
@@ -75,7 +77,38 @@ namespace _Project.Scripts.Runtime.AudioManager
                 return;
             }
 
+            if (fadeDuration > 0f)
+            {
+                Tween.Custom(target: this, 0, s.source.volume, fadeDuration,
+                    (target, val) => { s.source.volume = val; }, defaultFadeEase);
+            }
+
             s.source.Play();
+        }
+
+        public void StopSound(string name, float fadeDuration = 0f)
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning($"Sound with name {name} not found!");
+                return;
+            }
+
+            if (fadeDuration > 0f)
+            {
+                Tween.Custom(target: this, s.source.volume, 0, fadeDuration,
+                    (target, val) => { s.source.volume = val; }, defaultFadeEase).OnComplete(
+                    () =>
+                    {
+                        s.source.Stop();
+                        s.source.volume = s.volume;
+                    });
+            }
+            else
+            {
+                s.source.Stop();
+            }
         }
 
         [Button()]

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e12cd9cbb6445f8ea31d618f95a012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
   sounds:
   - name: Coin
     clip: {fileID: 8300000, guid: 4f6e490aa9a64b842a83313e0a2198e6, type: 3}
@@ -72,6 +73,15 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Toot
+    clip: {fileID: 8300000, guid: 7cee8d8d93aed054ebaaac42b6edc31c, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 93c4c869ea472c447bebb040adf8ae4d, type: 3}
     audioMixerGroup: {fileID: 1478221509044485727, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
@@ -81,13 +91,36 @@ MonoBehaviour:
     loop: 1
     playOnAwake: 1
     source: {fileID: 0}
+  - name: HighHat
+    clip: {fileID: 8300000, guid: e6ea09d726ddd8547ab53afa9f691f91, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: HighTom
+    clip: {fileID: 8300000, guid: 4d0ea3e932c642e4a945cfb1643d1d11, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   defaultAudioMixerGroup: {fileID: 24300002, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+  defaultFadeEase: 1
   enableBeatEvents: 1
   beatSettings:
     bpmOfSound: 126
     soundName: MenuMusic
     intervals:
     - steps: 1
+      trigger:
+        m_PersistentCalls:
+          m_Calls: []
+    - steps: 0.5
       trigger:
         m_PersistentCalls:
           m_Calls: []

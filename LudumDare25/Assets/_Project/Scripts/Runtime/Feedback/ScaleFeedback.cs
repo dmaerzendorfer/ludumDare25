@@ -48,8 +48,8 @@ namespace _Project.Scripts.Runtime.Feedback
             _scaleTween = Tween.Scale(target.transform, scaleTweenSettings).OnComplete(this, target =>
             {
                 target.IsPlaying = false;
-                target.OnFeedbackComplete.Invoke();
-            });
+                target.OnFeedbackComplete?.Invoke();
+            }, warnIfTargetDestroyed: false);
         }
 
         [Button]
@@ -57,8 +57,11 @@ namespace _Project.Scripts.Runtime.Feedback
         {
             base.Stop();
             //if the cycle is infinite we need to tell it if it should stop at the start or the end 
-            // _scaleTween.SetRemainingCycles(false);
-            _scaleTween.Complete();
+            if (_scaleTween.isAlive)
+            {
+                _scaleTween.SetRemainingCycles(false);
+                _scaleTween.Complete();
+            }
         }
     }
 }

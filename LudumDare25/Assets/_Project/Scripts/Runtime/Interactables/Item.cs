@@ -13,11 +13,12 @@ namespace _Project.Scripts.Runtime.Interactables
         public ScaleFeedback pickpupFeedback;
         public CooldownTracker cooldownTracker;
 
+        public Collider2D hitBox;
 
-        private BasePawn _holder;
+        protected BasePawn _holder;
 
 
-        private void Start()
+        public virtual void Start()
         {
             cooldownTracker = new CooldownTracker(this, cooldown);
         }

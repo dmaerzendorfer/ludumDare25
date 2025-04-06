@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4806023890093780001, guid: d9176defe4a085e4c977fb04783c98c8, type: 3}
+      propertyPath: currentlySelectedPawn
+      value: 
+      objectReference: {fileID: 738281097}
     - target: {fileID: 7358342102646860449, guid: d9176defe4a085e4c977fb04783c98c8, type: 3}
       propertyPath: m_Name
       value: ScreenSpacePlayerCanvas
@@ -448,6 +452,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738281097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6215611104376431106, guid: cba1fc596af83ed4e89b09808c656de9, type: 3}
+  m_PrefabInstance: {fileID: 6358343355569764810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a2152145134650a17816cf6061e046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &753544293
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +609,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1740129486945927942, guid: a2a3806794c6b0445b049da8d42b8612, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1556602195}
   m_SourcePrefab: {fileID: 100100000, guid: a2a3806794c6b0445b049da8d42b8612, type: 3}
 --- !u!1 &878928546
 GameObject:
@@ -866,6 +884,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop: {fileID: 1452569564}
+--- !u!1 &1556602190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1740129486945927942, guid: a2a3806794c6b0445b049da8d42b8612, type: 3}
+  m_PrefabInstance: {fileID: 825751794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1556602195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556602190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1665550390
 GameObject:
   m_ObjectHideFlags: 0

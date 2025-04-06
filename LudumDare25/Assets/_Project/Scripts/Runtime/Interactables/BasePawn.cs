@@ -8,11 +8,9 @@ namespace _Project.Scripts.Runtime.Interactables
 {
     public class BasePawn : MonoBehaviour
     {
-        private const string ShaderOutlineEnableTag = "_OutlineEnabled";
-        private static readonly int OutlineEnabled = Shader.PropertyToID(ShaderOutlineEnableTag);
-
         public GameObject targetFlag;
         public Transform hand;
+        public Transform offhandLocation;
 
         public Rigidbody2D rb;
         public ScaleFeedback pawnPop;
@@ -25,6 +23,7 @@ namespace _Project.Scripts.Runtime.Interactables
         [Foldout("MovementConfig")]
         public float stopDistance = 0.1f;
 
+        [Foldout("MovementConfig")]
         public UnityEvent onTargetReached = new UnityEvent();
 
         public bool IsSelected
@@ -34,7 +33,6 @@ namespace _Project.Scripts.Runtime.Interactables
             {
                 if (value == _isSelected) return;
                 _isSelected = value;
-                _outlineMaterial?.SetFloat(OutlineEnabled, _isSelected ? 1f : 0f);
                 if (value)
                     _audioManager.beatSettings.intervals[0].trigger.AddListener(pawnPop.Play);
                 else
@@ -42,6 +40,19 @@ namespace _Project.Scripts.Runtime.Interactables
             }
         }
 
+        public bool IsMoving
+        {
+            get => _isMoving;
+            set
+            {
+                if (value == _isMoving) return;
+                _isMoving = value;
+                if (value)
+                    walkingParticles.Play();
+                else
+                    walkingParticles.Stop();
+            }
+        }
 
         public Item CurrentlyHeldItem
         {
@@ -53,25 +64,33 @@ namespace _Project.Scripts.Runtime.Interactables
             }
         }
 
-        private SpriteRenderer _spriteRenderer;
-        private Material _outlineMaterial;
         private AudioManager.AudioManager _audioManager;
-
-
-        private bool _isSelected = false;
+        private bool _isSelected = true;
         private Item _currentlyHeldItem;
-
-
         private bool _isMoving = false;
 
         private void Start()
         {
             targetFlag.gameObject.SetActive(false);
-            _spriteRenderer = rb.GetComponent<SpriteRenderer>();
-            _outlineMaterial = _spriteRenderer.material;
-            IsSelected = _isSelected;
             _audioManager = AudioManager.AudioManager.Instance;
+
+            _audioManager.beatSettings.intervals[0].trigger.AddListener(pawnPop.Play);
+            //after scene transition immideately claim to be the currentlySelected pawn
+            PlayerController.Instance.currentlySelectedPawn = this;
+            IsSelected = true;
         }
+
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Item"))
+            {
+                if (other.transform.parent.TryGetComponent<Item>(out var item))
+                {
+                    Pickup(item);
+                }
+            }
+        }
+
 
         public void Pickup(Item item)
         {
@@ -82,8 +101,8 @@ namespace _Project.Scripts.Runtime.Interactables
         //move
         public void MoveToCommand(Vector3 worldPos)
         {
-            _isMoving = true;
-            walkingParticles.Play();
+            IsMoving = true;
+
             targetFlag.SetActive(false);
             targetFlag.SetActive(true);
             targetFlag.transform.position = worldPos;
@@ -91,7 +110,7 @@ namespace _Project.Scripts.Runtime.Interactables
 
         private void FixedUpdate()
         {
-            if (_isMoving)
+            if (IsMoving)
             {
                 Vector2 dir = (targetFlag.transform.position - rb.transform.position);
 
@@ -100,17 +119,12 @@ namespace _Project.Scripts.Runtime.Interactables
                 {
                     dir.Normalize();
                     rb.linearVelocity = dir * speed;
-                    //also rotate towards velocity
-                    var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-                    rb.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
                 }
                 else
                 {
                     rb.linearVelocity = Vector2.zero;
-                    _isMoving = false;
+                    IsMoving = false;
                     targetFlag.SetActive(false);
-                    walkingParticles.Stop();
                     onTargetReached.Invoke();
                 }
             }

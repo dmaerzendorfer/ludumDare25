@@ -1,9 +1,7 @@
-using System;
 using _Project.Scripts.Runtime.Feedback;
 using _Project.Scripts.Runtime.Interactables;
 using _Project.Scripts.Runtime.Utility;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace _Project.Scripts.Runtime
@@ -20,6 +18,8 @@ namespace _Project.Scripts.Runtime
         private Ray2D _ray;
         private RaycastHit2D _hitData;
 
+        private bool _isMoveHeld = false;
+
         public Vector3 CursorWorldPos =>
             Camera.main.ScreenToWorldPoint(new Vector3(cursorImage.position.x, cursorImage.position.y, CursorDepth));
 
@@ -32,7 +32,8 @@ namespace _Project.Scripts.Runtime
 
         public void OnLeftClick(InputAction.CallbackContext context)
         {
-            if (!context.performed) return;
+            if (context.started) _isMoveHeld = true;
+            if (context.canceled) _isMoveHeld = false;
 
             clickFeedback.Play();
 
@@ -41,39 +42,21 @@ namespace _Project.Scripts.Runtime
 
             _hitData = Physics2D.Raycast(CursorWorldPos, Vector2.zero, 10f, selectableLayerMask);
 
-            if (_hitData.collider != null)
+            // if (_hitData.collider != null)
+            // {
+            //     //check if its a pawn
+            //     if (_hitData.transform.parent.TryGetComponent<BasePawn>(out var pawn))
+            //     {
+            //         if (currentlySelectedPawn)
+            //             currentlySelectedPawn.IsSelected = false;
+            //         currentlySelectedPawn = pawn;
+            //         currentlySelectedPawn.IsSelected = true;
+            //     }
+            // }
+            // else
+            if (currentlySelectedPawn)
             {
-                //check if its a pawn
-                if (_hitData.transform.parent.TryGetComponent<BasePawn>(out var pawn))
-                {
-                    if (currentlySelectedPawn)
-                        currentlySelectedPawn.IsSelected = false;
-                    if (currentlySelectedPawn == pawn)
-                    {
-                        currentlySelectedPawn = null;
-                        return;
-                    }
-
-                    currentlySelectedPawn = pawn;
-                    currentlySelectedPawn.IsSelected = true;
-                }
-                //if we have a active pawn and press on a item
-                else if (currentlySelectedPawn && _hitData.transform.parent.TryGetComponent<Item>(out var item))
-                {
-                    currentlySelectedPawn.MoveToCommand(CursorWorldPos);
-
-                    void ActionWrapper()
-                    {
-                        currentlySelectedPawn.Pickup(item);
-                        currentlySelectedPawn.onTargetReached.RemoveListener(ActionWrapper);
-                    }
-
-                    currentlySelectedPawn.onTargetReached.AddListener(ActionWrapper);
-                }
-            }
-            else if (currentlySelectedPawn)
-            {
-                currentlySelectedPawn.MoveToCommand(CursorWorldPos);
+                currentlySelectedPawn?.MoveToCommand(CursorWorldPos);
             }
         }
 
@@ -85,6 +68,13 @@ namespace _Project.Scripts.Runtime
         public void OnPointerMove(InputAction.CallbackContext context)
         {
             cursorImage.position = context.ReadValue<Vector2>();
+            if (_isMoveHeld)
+                currentlySelectedPawn?.MoveToCommand(CursorWorldPos);
+
+            //make pawn look at cursor
+            Vector3 dir = CursorWorldPos - currentlySelectedPawn.transform.position;
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            currentlySelectedPawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
     }
 }

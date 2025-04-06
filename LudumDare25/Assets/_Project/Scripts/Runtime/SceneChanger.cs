@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Utility;
 using NaughtyAttributes;
 using PrimeTween;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -31,7 +32,7 @@ namespace _Project.Scripts.Runtime
         [SerializeField]
         private TweenSettings<Color> colorAdjustmentsTweenSettings;
 
-
+        public UnityEvent onTransitionDone = new UnityEvent();
         public bool IsTransitioning { get; set; } = false;
 
         private AudioManager.AudioManager _audioManager;
@@ -118,6 +119,7 @@ namespace _Project.Scripts.Runtime
 
             IsTransitioning = false;
             onCompleteCallback?.Invoke();
+            onTransitionDone.Invoke();
         }
     }
 }

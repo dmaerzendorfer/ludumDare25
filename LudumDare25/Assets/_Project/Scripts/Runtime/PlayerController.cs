@@ -62,19 +62,23 @@ namespace _Project.Scripts.Runtime
 
         public void OnRightClick(InputAction.CallbackContext context)
         {
-            currentlySelectedPawn?.CurrentlyHeldItem?.UseItem(CursorWorldPos);
+            if (currentlySelectedPawn)
+                currentlySelectedPawn.CurrentlyHeldItem?.UseItem(CursorWorldPos);
         }
 
         public void OnPointerMove(InputAction.CallbackContext context)
         {
             cursorImage.position = context.ReadValue<Vector2>();
-            if (_isMoveHeld)
+            if (_isMoveHeld && currentlySelectedPawn)
                 currentlySelectedPawn?.MoveToCommand(CursorWorldPos);
 
-            //make pawn look at cursor
-            Vector3 dir = CursorWorldPos - currentlySelectedPawn.transform.position;
-            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            currentlySelectedPawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            if (currentlySelectedPawn)
+            {
+                //make pawn look at cursor
+                Vector3 dir = CursorWorldPos - currentlySelectedPawn.transform.position;
+                var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                currentlySelectedPawn.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            }
         }
     }
 }

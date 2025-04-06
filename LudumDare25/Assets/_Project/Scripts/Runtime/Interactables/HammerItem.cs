@@ -67,7 +67,7 @@ namespace _Project.Scripts.Runtime.Interactables
             //todo: fix this later so the hammer is on the back side of the pawn
             //will most likely need a tween.custom and use AngleAxis to control clockwise/counterclockwise!
             
-            //todo: maybe play swooshy sfx
+            _audioManager.PlaySound("FloorTom");
             _count = ++_count % 2;
         }
 
@@ -79,7 +79,7 @@ namespace _Project.Scripts.Runtime.Interactables
                 var dir = (otherBody.transform.position - _holder.transform.position).normalized;
                 otherBody?.AddForce(dir * force);
                 cameraShakeFeedback.Play();
-                _audioManager.PlaySound("PunchyKick");
+                // _audioManager.PlaySound("PunchyKick");
 
             }
         }

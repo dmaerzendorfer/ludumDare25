@@ -118,6 +118,15 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: FloorTom
+    clip: {fileID: 8300000, guid: eaf6eb269eee3de4d847b2673694ef39, type: 3}
+    audioMixerGroup: {fileID: 756147342254598248, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   defaultAudioMixerGroup: {fileID: 24300002, guid: cee550ee9e6a3124a862923cb07af888, type: 2}
   defaultFadeEase: 1
   enableBeatEvents: 1

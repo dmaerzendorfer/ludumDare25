@@ -1,4 +1,5 @@
-﻿using PrimeTween;
+﻿using System;
+using PrimeTween;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace _Project.Scripts.Runtime.Feedback
     {
         public GameObject target;
         public bool animateOnStart = true;
+        public bool animateOnEnable = false;
+
         public bool queryStartScaleOnStart = true;
 
         [SerializeField]
@@ -34,6 +37,14 @@ namespace _Project.Scripts.Runtime.Feedback
             canPlayDuringPlaying = true;
             if (animateOnStart)
                 Play();
+        }
+
+        private void OnEnable()
+        {
+            if (animateOnEnable)
+            {
+                Play();
+            }
         }
 
         public override void HandlePlay()

@@ -11,6 +11,7 @@ namespace _Project.Scripts.Runtime.Interactables
         public GameObject targetFlag;
         public Transform hand;
         public Transform offhandLocation;
+        public Health health;
 
         public Rigidbody2D rb;
         public ScaleFeedback pawnPop;

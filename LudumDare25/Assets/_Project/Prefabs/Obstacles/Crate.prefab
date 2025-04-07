@@ -244,8 +244,8 @@ MonoBehaviour:
       m_Calls: []
   canPlayDuringPlaying: 1
   target: {fileID: 7154506039321771612}
-  animateOnStart: 1
-  animateOnEnable: 0
+  animateOnStart: 0
+  animateOnEnable: 1
   queryStartScaleOnStart: 0
   scaleTweenSettings:
     startFromCurrent: 0

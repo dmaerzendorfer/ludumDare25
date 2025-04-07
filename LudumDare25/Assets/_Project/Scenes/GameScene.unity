@@ -652,14 +652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 23013434963414044, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
-      propertyPath: basePawn
+    - target: {fileID: 1879686340725692345, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
+      propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 738281097}
-    - target: {fileID: 1226534139698304676, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1987150033}
     - target: {fileID: 2737209799634766271, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -703,14 +699,6 @@ PrefabInstance:
     - target: {fileID: 4484226222846571906, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6699869298623625696, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678161961078876383, guid: 2c52378b788a4f3458458b584f4b9091, type: 3}
-      propertyPath: m_Volume
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -790,6 +778,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6263714361979781857, guid: 2c01ab5fbfdd5604c8739fb81d6a2225, type: 3}
+      propertyPath: force
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 8409879866514810151, guid: 2c01ab5fbfdd5604c8739fb81d6a2225, type: 3}
       propertyPath: m_Name
       value: HammerItem

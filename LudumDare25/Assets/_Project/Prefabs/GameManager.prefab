@@ -303,6 +303,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1234884607986664788}
+  - {fileID: 8072182210502529154}
   - {fileID: 6881114412862826566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -319,14 +321,1116 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTyper: {fileID: 3844749473244097848}
-  basePawn: {fileID: 0}
   introText:
-  - text: Welcome to Hell :)
-    delay: 2
-  - text: I dont know yet what this is about
-    delay: 2
-  - text: 
-    delay: 0
+  - text: Welcome to the Crates of Hell
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 2
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  - text: You are doomed to work in its depths
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 2
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  - text: Your job?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 2
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  - text: Organise crates of course!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 23013434963414044}
+          m_TargetAssemblyTypeName: _Project.Scripts.Runtime.GameManager, Assembly-CSharp
+          m_MethodName: SpawnInitialCrates
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    linger: 2
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  - text: Go on, do your job
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1221458750830787617}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  waveComments:
+  - text: Well done, let's do it again
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 0
+    overrideCratesNeeded: 0
+    overrideNeeded: 0
+  - text: How about some more this time?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 1
+    overrideAmount: 20
+    overrideCratesNeeded: 1
+    overrideNeeded: 8
+  - text: This will go on for a while
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: You know, this is hell right?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: There is no escape from hell
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Here we go again
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: You know  the drill right?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Good little demon
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Bored yet? Too bad
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Ahhh, the blissful tunes of mortal pain
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Can you feel the rhythm of torture?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Never stopping, always going strong
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Better keep working
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Are you still here? Oh yes, there is no escape. I forgot
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: You wouldn't want to quit, would you?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: You know, you better not expect anything
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Always the same. Just good old crates and a nice rhythm
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Oh, thats more than usual
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 1
+    overrideAmount: 30
+    overrideCratesNeeded: 1
+    overrideNeeded: 5
+  - text: Painful is it? Good.
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Hope you don't enjoy this
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Imagine if this game had another mechanic
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Too bad there isn't one
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Do you know how many crates you organised already? Me neither
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Are you searching for an exit?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Keep looking
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Did you catch that?!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Ahh never mind, it was just a crate
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Speaking of crates...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: I am sure you want some more
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Ok this time real fast!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: I said fast... What was that?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Remember when I said there is no exit?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: It is true, this is hell afterall
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Tho it is just the crate of hell... See what I did there?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Jokes aside, this is just one part of hell
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: There is also one about doors I heard
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: And one about pigs on a farm
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: And another one with lava everywhere
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Well, whatever lets stick with crates tho
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: You know what? You did well
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: You deserve a reward
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Just kidding
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: The crates await
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Wouldn't want to let your fans down, would you?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: I am your fan, you know
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Not that a single fan would help you in hell
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Nice work just now, let's go again
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Ahhh, I can do this forever
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: How about you?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Tired yet?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Would be a shame if you stopped now...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: After all...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: There is no light at the end of the tunnel
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Just lots of darkness and heaps of crates
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: At some point you will like it here
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Maybe you even get a promotion
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Then you can be like me
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: And ovserve a poor soul working hard
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: You know what's weird?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: That you are still here
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Did not expect that to be frank
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: And my name isn't even Frank!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Whats yours actually?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Hmmm, what was that? Did not hear you
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: I'll just call you Lesley
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Now Lesley, tell me about yourself. What brought you here
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: 'Whooops, forgot: I don''t care. Keep working!'
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Sorry not sorry about that. Being rude is part of the job
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Don't forget the one on the bottom left
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Well done Leslie
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Keep going and you might make it one day
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Well done, let's do it again... Am I repeating myself?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Hey Leslie
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Wanna hear a joke?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Yeah me too...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Just kidding, that's not the joke
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: The real joke is...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Why don't demons ever take sick days?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Because they are hell-bent on working!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: So get back to work!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: That was a bit slow, wouldn't you say?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 30
+    overrideCratesNeeded: 0
+    overrideNeeded: 5
+  - text: Take some more
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 1
+    overrideAmount: 20
+    overrideCratesNeeded: 1
+    overrideNeeded: 10
+  - text: Hell-yeah, you did it!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Ok, once more Leslie
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Soon
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Soon there will be more crates
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Can you feel the burn yet?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: By the way...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Nice hammer you got there
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Would be a shame if someone took it away
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Then you could only haul crates with your arms
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Thats why we don't do that!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: After all...
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: We are all about efficiency here
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: And we can't have you stalling or even take a break
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Keep going Leslie
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Almost there
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Nice, yet another goal reached
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Doesn't that feel nice?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: We are all about respect and satisfaction in this family business
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: 'Just so you know: I am happy you are here'
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: And even more happy that you cannot leave
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Oh boy, I can go on forever with this
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: How about you?
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: I hope you feel heard
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Because I did not listen at all. Whoops
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Anyway, more crates!
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Ahh the smell of crates slightly burning
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Love it
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Hope you love it too
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Gimme one more and you get a break
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Here is your break, it's an extra small batch
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: Thank you for your hard work Leslie
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: I enjoyed our time together so far
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  - text: I hope you did as well
+    eventAfterTextComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    linger: 0
+    overrideSpawnedCrates: 0
+    overrideAmount: 20
+    overrideCratesNeeded: 0
+    overrideNeeded: 10
+  deliveryField: {fileID: 7211333702070239285}
+  crateSpawner: {fileID: 7269641544820197462}
+  cratesNeeded: {x: 3, y: 5}
+  cratesSpawned: 15
 --- !u!1 &3683232675222220849
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +1480,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_Resource: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1.2
   Loop: 0
   Mute: 0
@@ -509,7 +1613,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_Resource: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
@@ -642,7 +1746,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_Resource: {fileID: 8300000, guid: 56b0d958f9700ad4ea9cce84b98eda8c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -784,7 +1888,7 @@ MonoBehaviour:
   scaleTweenSettings:
     startFromCurrent: 0
     startValue: {x: 1, y: 1, z: 1}
-    endValue: {x: 1.2, y: 1.2, z: 1.2}
+    endValue: {x: 1.1, y: 1.1, z: 1.1}
     settings:
       duration: 0.1
       ease: 4
@@ -859,3 +1963,175 @@ MonoBehaviour:
       m_Calls: []
   canPlayDuringPlaying: 1
   audioSources: []
+--- !u!1001 &5496414773984886671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4484226222846571906}
+    m_Modifications:
+    - target: {fileID: 1521008586862290024, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_Name
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795047300157254694, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_Name
+      value: CrateSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928963073412560857, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: noZone
+      value: 
+      objectReference: {fileID: 1057686817438865859}
+    - target: {fileID: 2928963073412560857, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: maxInNoZone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+--- !u!114 &7269641544820197462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2928963073412560857, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+  m_PrefabInstance: {fileID: 5496414773984886671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a11bb00fff4567987bed29d4fa7bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8072182210502529154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4341776728808025869, guid: 60fd9130e52ef4446a6b10c9706445ec, type: 3}
+  m_PrefabInstance: {fileID: 5496414773984886671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7860232416731135905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4484226222846571906}
+    m_Modifications:
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072037455368766336, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_Name
+      value: DeliveryField
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072037455368766336, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+--- !u!61 &1057686817438865859 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7185650653170656866, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+  m_PrefabInstance: {fileID: 7860232416731135905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1221458750830787617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9072037455368766336, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+  m_PrefabInstance: {fileID: 7860232416731135905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1234884607986664788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8950366318081637109, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+  m_PrefabInstance: {fileID: 7860232416731135905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7211333702070239285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 650464995975888788, guid: a1d33876b65b22c45a57369dbb8350f1, type: 3}
+  m_PrefabInstance: {fileID: 7860232416731135905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221458750830787617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13309d71d66b3314dbfce8836bffabee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
